@@ -9,6 +9,7 @@
                 </ion-card-header>
 
                 <ion-card-content>
+                    <form action="">
                     <ion-item>
                         <ion-label position="floating">Email</ion-label>
                         <ion-input placeholder="Enter your email adress" ></ion-input>
@@ -23,6 +24,7 @@
                           
                         </ion-item>
                     <ion-button color="danger" size="full" @click="$emit('loginEmited')">Submit</ion-button>
+                    </form>
                 </ion-card-content>
             </ion-card>
 
@@ -30,9 +32,24 @@
     </ion-content>
 </template>
 <script>
-import { modalController } from '@ionic/vue'
+import { modalController, IonButton, 
+    IonLabel,
+    IonInput,
+    IonCardContent,
+    IonCardHeader,
+    IonItem,
+    IonCard  } from '@ionic/vue'
 
 export default {
+    components: {
+        IonButton,
+        IonLabel,
+        IonInput,
+        IonCardContent,
+        IonCardHeader,
+        IonItem,
+ IonCard   
+    },
     data() {
     
     },

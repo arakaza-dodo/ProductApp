@@ -1,8 +1,7 @@
 <template>
   <ion-app>
-    <ion-router-outlet v-if="connected" />
+    <ion-router-outlet v-if="$store.state.tokens != null"></ion-router-outlet>
     <login-page v-else></login-page>
-   
   </ion-app>
 </template>
 
@@ -20,19 +19,17 @@ export default {
     IonApp,
     IonRouterOutlet,
     LoginPage,
- 
+
   },
   data() {
     return {
       connected: false,
-      access: null,
+
     };
   },
   mounted() {
-    this.access = localStorage.getItem("access")
-    if (this.access) {
-      this.connected = true
-    }
+    this.$store.state.tokens = JSON.parse(localStorage.getItem("tokens"))
   }
 }
+
 </script>
